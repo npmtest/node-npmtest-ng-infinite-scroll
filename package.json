@@ -1,1 +1,40 @@
-{     "devDependencies": {         "ng-infinite-scroll": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-ng-infinite-scroll",     "homepage": "https://github.com/npmtest/node-npmtest-ng-infinite-scroll",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-ng-infinite-scroll.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### test coverage for  [ng-infinite-scroll (v1.3.0)](https://github.com/sroze/ngInfiniteScroll#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-ng-infinite-scroll.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-ng-infinite-scroll) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-ng-infinite-scroll.svg)](https://travis-ci.org/npmtest/node-npmtest-ng-infinite-scroll)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "ng-infinite-scroll": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-ng-infinite-scroll",
+    "keywords": [
+        "coverage",
+        "test",
+        "ng-infinite-scroll"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_ng_infinite_scroll.js",
+    "name": "npmtest-ng-infinite-scroll",
+    "nameAlias": "npmtest_ng_infinite_scroll",
+    "nameOriginal": "npmtest-ng-infinite-scroll",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-ng-infinite-scroll.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
